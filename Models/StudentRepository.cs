@@ -16,7 +16,7 @@ namespace CRUDDapperDevExpress.Models
             _connection = AppConnection.GetConnection();
         }
 
-        public bool Add(Student student)
+        public bool Insert(Student student)
         {
             int rowsEffected = 0;
             try

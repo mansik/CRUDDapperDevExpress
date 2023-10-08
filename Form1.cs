@@ -113,7 +113,7 @@ namespace CRUDDapperDevExpress
             };
 
 
-            var result = studentRepository.Add(student);
+            var result = studentRepository.Insert(student);
             if (result)
             {
                 ClearInput();
