@@ -13,7 +13,7 @@ namespace CRUDDapperDevExpress.Models
         readonly IDbConnection _connection;
         public StudentRepository()
         {
-            _connection = AppConnection.Connection;
+            _connection = AppConnection.GetConnection();
         }
 
         public bool Add(Student student)

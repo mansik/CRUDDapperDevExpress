@@ -40,7 +40,7 @@ namespace CRUDDapperDevExpress
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            using (IDbConnection connection = AppConnection.Connection)
+            using (IDbConnection connection = AppConnection.GetConnection())
             {
                 // 작업 => genderComboBoxEdit의 Design View에서 Gender Column 추가, FieldName = Name (대소문자 구분) 
                 // select 구분의 필드명을 Gender 클래스와 같이 대소문자 일치 할 것.(FieldName 및 DisplayMember 에서 대소문자 구분)
@@ -62,7 +62,7 @@ namespace CRUDDapperDevExpress
 
             //var studentID = studentIDTextEdit.Text;
             var fullName = fullNameTextEdit.Text;
-            var gender = genderComboBoxEdit.EditValue.ToString() == "1" ? false : true;
+            var gender = genderComboBoxEdit.EditValue.ToString() == "1";
             var age = Convert.ToInt32(ageSpinEdit.EditValue);
             var email = emailTextEdit.Text;
             var address = addressTextEdit.Text;
