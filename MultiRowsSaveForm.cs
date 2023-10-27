@@ -50,8 +50,12 @@ namespace CRUDDapperDevExpress
                 var student = gridView.GetFocusedRow() as Student;
                 var dialogResult = XtraMessageBox.Show($"Are you sure Delete Student {student.FullName}?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (dialogResult == DialogResult.Yes)
-                {
+                {                    
                     _studentRepository.Delete(student.StudentID);
+                    // 또는
+                    //if (int.TryParse(gridView.GetFocusedRowCellValue("StudentID").ToString(), out int Id))
+                    //    _studentRepository.Delete(Id);
+
                     //gridView.DeleteRow(gridView.FocusedRowHandle);
                     gridView.DeleteSelectedRows();
 
@@ -87,8 +91,7 @@ namespace CRUDDapperDevExpress
                         Email = row.Email,
                         Address = row.Address
                     };
-
-                    listBoxControl.Items.Add($"Student: {student}");
+                    
                     if (row.StudentID == 0)
                     {
                         _studentRepository.Insert(student);
