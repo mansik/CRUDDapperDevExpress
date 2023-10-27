@@ -1,7 +1,7 @@
 ﻿
 namespace CRUDDapperDevExpress
 {
-    partial class Form1
+    partial class GridButtonForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,15 +29,15 @@ namespace CRUDDapperDevExpress
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GridButtonForm));
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.gridControl = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -72,7 +72,7 @@ namespace CRUDDapperDevExpress
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deleteButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addressTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emailTextEdit.Properties)).BeginInit();
@@ -111,25 +111,25 @@ namespace CRUDDapperDevExpress
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(737, 524);
+            this.layoutControl1.Size = new System.Drawing.Size(842, 524);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // gridControl
             // 
-            this.gridControl.Location = new System.Drawing.Point(15, 156);
-            this.gridControl.MainView = this.gridView1;
+            this.gridControl.Location = new System.Drawing.Point(15, 161);
+            this.gridControl.MainView = this.gridView;
             this.gridControl.Name = "gridControl";
             this.gridControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.deleteButton});
-            this.gridControl.Size = new System.Drawing.Size(707, 353);
+            this.gridControl.Size = new System.Drawing.Size(812, 348);
             this.gridControl.TabIndex = 8;
             this.gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.gridView});
             // 
-            // gridView1
+            // gridView
             // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn2,
             this.gridColumn3,
             this.gridColumn4,
@@ -137,66 +137,72 @@ namespace CRUDDapperDevExpress
             this.gridColumn6,
             this.gridColumn7,
             this.colDelete});
-            this.gridView1.GridControl = this.gridControl;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsBehavior.Editable = false;
-            this.gridView1.OptionsView.ShowGroupPanel = false;
-            this.gridView1.RowCellClick += new DevExpress.XtraGrid.Views.Grid.RowCellClickEventHandler(this.gridView1_RowCellClick);
-            this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
+            this.gridView.GridControl = this.gridControl;
+            this.gridView.Name = "gridView";
+            this.gridView.OptionsBehavior.Editable = false;
+            this.gridView.OptionsView.ShowGroupPanel = false;
+            this.gridView.RowCellClick += new DevExpress.XtraGrid.Views.Grid.RowCellClickEventHandler(this.gridView_RowCellClick);
+            this.gridView.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView_FocusedRowChanged);
             // 
             // gridColumn2
             // 
             this.gridColumn2.Caption = "StudentID";
             this.gridColumn2.FieldName = "StudentID";
+            this.gridColumn2.MinWidth = 23;
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 1;
-            this.gridColumn2.Width = 57;
+            this.gridColumn2.Width = 65;
             // 
             // gridColumn3
             // 
             this.gridColumn3.Caption = "FullName";
             this.gridColumn3.FieldName = "FullName";
+            this.gridColumn3.MinWidth = 23;
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 2;
-            this.gridColumn3.Width = 84;
+            this.gridColumn3.Width = 96;
             // 
             // gridColumn4
             // 
             this.gridColumn4.Caption = "Gender";
             this.gridColumn4.FieldName = "Gender";
+            this.gridColumn4.MinWidth = 23;
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 3;
-            this.gridColumn4.Width = 46;
+            this.gridColumn4.Width = 53;
             // 
             // gridColumn5
             // 
             this.gridColumn5.Caption = "Age";
             this.gridColumn5.FieldName = "Age";
+            this.gridColumn5.MinWidth = 23;
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 4;
-            this.gridColumn5.Width = 27;
+            this.gridColumn5.Width = 31;
             // 
             // gridColumn6
             // 
             this.gridColumn6.Caption = "Email";
             this.gridColumn6.FieldName = "Email";
+            this.gridColumn6.MinWidth = 23;
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 5;
-            this.gridColumn6.Width = 95;
+            this.gridColumn6.Width = 109;
             // 
             // gridColumn7
             // 
             this.gridColumn7.Caption = "Address";
             this.gridColumn7.FieldName = "Address";
+            this.gridColumn7.MinWidth = 23;
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 6;
-            this.gridColumn7.Width = 337;
+            this.gridColumn7.Width = 385;
             // 
             // colDelete
             // 
@@ -206,51 +212,52 @@ namespace CRUDDapperDevExpress
             this.colDelete.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colDelete.Caption = "Delete";
             this.colDelete.ColumnEdit = this.deleteButton;
+            this.colDelete.MinWidth = 23;
             this.colDelete.Name = "colDelete";
             this.colDelete.OptionsColumn.AllowEdit = false;
             this.colDelete.Visible = true;
             this.colDelete.VisibleIndex = 0;
-            this.colDelete.Width = 43;
+            this.colDelete.Width = 49;
             // 
             // deleteButton
             // 
             this.deleteButton.AutoHeight = false;
-            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
             this.deleteButton.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
             // addressTextEdit
             // 
-            this.addressTextEdit.Location = new System.Drawing.Point(76, 84);
+            this.addressTextEdit.Location = new System.Drawing.Point(83, 84);
             this.addressTextEdit.Name = "addressTextEdit";
-            this.addressTextEdit.Size = new System.Drawing.Size(649, 20);
+            this.addressTextEdit.Size = new System.Drawing.Size(747, 20);
             this.addressTextEdit.StyleController = this.layoutControl1;
             this.addressTextEdit.TabIndex = 5;
             // 
             // emailTextEdit
             // 
-            this.emailTextEdit.Location = new System.Drawing.Point(356, 60);
+            this.emailTextEdit.Location = new System.Drawing.Point(404, 60);
             this.emailTextEdit.Name = "emailTextEdit";
-            this.emailTextEdit.Size = new System.Drawing.Size(369, 20);
+            this.emailTextEdit.Size = new System.Drawing.Size(426, 20);
             this.emailTextEdit.StyleController = this.layoutControl1;
             this.emailTextEdit.TabIndex = 4;
             // 
             // fullNameTextEdit
             // 
-            this.fullNameTextEdit.Location = new System.Drawing.Point(76, 36);
+            this.fullNameTextEdit.Location = new System.Drawing.Point(83, 36);
             this.fullNameTextEdit.Name = "fullNameTextEdit";
-            this.fullNameTextEdit.Size = new System.Drawing.Size(212, 20);
+            this.fullNameTextEdit.Size = new System.Drawing.Size(246, 20);
             this.fullNameTextEdit.StyleController = this.layoutControl1;
             this.fullNameTextEdit.TabIndex = 1;
             // 
             // studentIDTextEdit
             // 
-            this.studentIDTextEdit.Location = new System.Drawing.Point(76, 12);
+            this.studentIDTextEdit.Location = new System.Drawing.Point(83, 12);
             this.studentIDTextEdit.Name = "studentIDTextEdit";
             this.studentIDTextEdit.Properties.ReadOnly = true;
-            this.studentIDTextEdit.Size = new System.Drawing.Size(212, 20);
+            this.studentIDTextEdit.Size = new System.Drawing.Size(246, 20);
             this.studentIDTextEdit.StyleController = this.layoutControl1;
             this.studentIDTextEdit.TabIndex = 0;
             // 
@@ -261,19 +268,19 @@ namespace CRUDDapperDevExpress
             0,
             0,
             0});
-            this.ageSpinEdit.Location = new System.Drawing.Point(356, 36);
+            this.ageSpinEdit.Location = new System.Drawing.Point(404, 36);
             this.ageSpinEdit.Name = "ageSpinEdit";
             this.ageSpinEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.ageSpinEdit.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
             this.ageSpinEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
-            this.ageSpinEdit.Size = new System.Drawing.Size(369, 20);
+            this.ageSpinEdit.Size = new System.Drawing.Size(426, 20);
             this.ageSpinEdit.StyleController = this.layoutControl1;
             this.ageSpinEdit.TabIndex = 2;
             // 
             // genderComboBoxEdit
             // 
-            this.genderComboBoxEdit.Location = new System.Drawing.Point(76, 60);
+            this.genderComboBoxEdit.Location = new System.Drawing.Point(83, 60);
             this.genderComboBoxEdit.Name = "genderComboBoxEdit";
             this.genderComboBoxEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -281,7 +288,7 @@ namespace CRUDDapperDevExpress
             this.genderComboBoxEdit.Properties.PopupSizeable = false;
             this.genderComboBoxEdit.Properties.PopupView = this.gridLookUpEdit1View;
             this.genderComboBoxEdit.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            this.genderComboBoxEdit.Size = new System.Drawing.Size(212, 20);
+            this.genderComboBoxEdit.Size = new System.Drawing.Size(246, 20);
             this.genderComboBoxEdit.StyleController = this.layoutControl1;
             this.genderComboBoxEdit.TabIndex = 3;
             // 
@@ -305,9 +312,9 @@ namespace CRUDDapperDevExpress
             // editButton
             // 
             this.editButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("editButton.ImageOptions.Image")));
-            this.editButton.Location = new System.Drawing.Point(645, 108);
+            this.editButton.Location = new System.Drawing.Point(738, 108);
             this.editButton.Name = "editButton";
-            this.editButton.Size = new System.Drawing.Size(80, 22);
+            this.editButton.Size = new System.Drawing.Size(92, 22);
             this.editButton.StyleController = this.layoutControl1;
             this.editButton.TabIndex = 7;
             this.editButton.Text = "Edit";
@@ -316,9 +323,9 @@ namespace CRUDDapperDevExpress
             // SaveButton
             // 
             this.SaveButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("SaveButton.ImageOptions.Image")));
-            this.SaveButton.Location = new System.Drawing.Point(559, 108);
+            this.SaveButton.Location = new System.Drawing.Point(640, 108);
             this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(82, 22);
+            this.SaveButton.Size = new System.Drawing.Size(94, 22);
             this.SaveButton.StyleController = this.layoutControl1;
             this.SaveButton.TabIndex = 6;
             this.SaveButton.Text = "Save";
@@ -340,8 +347,8 @@ namespace CRUDDapperDevExpress
             this.layoutControlItem8,
             this.layoutControlItem9,
             this.layoutControlItem5});
-            this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(737, 524);
+            this.layoutControlGroup1.Name = "Root";
+            this.layoutControlGroup1.Size = new System.Drawing.Size(842, 524);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -349,27 +356,30 @@ namespace CRUDDapperDevExpress
             this.layoutControlItem1.Control = this.studentIDTextEdit;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(280, 24);
+            this.layoutControlItem1.Size = new System.Drawing.Size(321, 24);
             this.layoutControlItem1.Text = "StudentID:";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(61, 14);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(68, 14);
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.fullNameTextEdit;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(280, 24);
+            this.layoutControlItem2.Size = new System.Drawing.Size(321, 24);
             this.layoutControlItem2.Text = "Full Name:";
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(61, 14);
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(68, 14);
             // 
             // layoutControlGroup2
             // 
+            this.layoutControlGroup2.AppearanceGroup.Font = new System.Drawing.Font("나눔스퀘어 네오 Regular", 9.75F, System.Drawing.FontStyle.Bold);
+            this.layoutControlGroup2.AppearanceGroup.Options.UseFont = true;
+            this.layoutControlGroup2.CaptionImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("layoutControlGroup2.CaptionImageOptions.Image")));
             this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem7});
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 122);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
             this.layoutControlGroup2.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            this.layoutControlGroup2.Size = new System.Drawing.Size(717, 382);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(822, 382);
             this.layoutControlGroup2.Text = "List Students";
             // 
             // layoutControlItem7
@@ -377,7 +387,7 @@ namespace CRUDDapperDevExpress
             this.layoutControlItem7.Control = this.gridControl;
             this.layoutControlItem7.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(711, 357);
+            this.layoutControlItem7.Size = new System.Drawing.Size(816, 352);
             this.layoutControlItem7.Text = "List Students";
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
@@ -387,34 +397,34 @@ namespace CRUDDapperDevExpress
             this.layoutControlItem4.Control = this.addressTextEdit;
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 72);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(717, 24);
+            this.layoutControlItem4.Size = new System.Drawing.Size(822, 24);
             this.layoutControlItem4.Text = "Address:";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(61, 14);
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(68, 14);
             // 
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.genderComboBoxEdit;
             this.layoutControlItem6.Location = new System.Drawing.Point(0, 48);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(280, 24);
+            this.layoutControlItem6.Size = new System.Drawing.Size(321, 24);
             this.layoutControlItem6.Text = "Gender";
-            this.layoutControlItem6.TextSize = new System.Drawing.Size(61, 14);
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(68, 14);
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.emailTextEdit;
-            this.layoutControlItem3.Location = new System.Drawing.Point(280, 48);
+            this.layoutControlItem3.Location = new System.Drawing.Point(321, 48);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(437, 24);
+            this.layoutControlItem3.Size = new System.Drawing.Size(501, 24);
             this.layoutControlItem3.Text = "Email:";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(61, 14);
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(68, 14);
             // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(280, 0);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(321, 0);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(437, 24);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(501, 24);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem3
@@ -422,17 +432,17 @@ namespace CRUDDapperDevExpress
             this.emptySpaceItem3.AllowHotTrack = false;
             this.emptySpaceItem3.Location = new System.Drawing.Point(0, 96);
             this.emptySpaceItem3.Name = "emptySpaceItem3";
-            this.emptySpaceItem3.Size = new System.Drawing.Size(547, 26);
+            this.emptySpaceItem3.Size = new System.Drawing.Size(628, 26);
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem8
             // 
             this.layoutControlItem8.Control = this.SaveButton;
-            this.layoutControlItem8.Location = new System.Drawing.Point(547, 96);
-            this.layoutControlItem8.MaxSize = new System.Drawing.Size(86, 26);
-            this.layoutControlItem8.MinSize = new System.Drawing.Size(86, 26);
+            this.layoutControlItem8.Location = new System.Drawing.Point(628, 96);
+            this.layoutControlItem8.MaxSize = new System.Drawing.Size(98, 26);
+            this.layoutControlItem8.MinSize = new System.Drawing.Size(98, 26);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(86, 26);
+            this.layoutControlItem8.Size = new System.Drawing.Size(98, 26);
             this.layoutControlItem8.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
@@ -440,11 +450,11 @@ namespace CRUDDapperDevExpress
             // layoutControlItem9
             // 
             this.layoutControlItem9.Control = this.editButton;
-            this.layoutControlItem9.Location = new System.Drawing.Point(633, 96);
-            this.layoutControlItem9.MaxSize = new System.Drawing.Size(84, 26);
-            this.layoutControlItem9.MinSize = new System.Drawing.Size(84, 26);
+            this.layoutControlItem9.Location = new System.Drawing.Point(726, 96);
+            this.layoutControlItem9.MaxSize = new System.Drawing.Size(96, 26);
+            this.layoutControlItem9.MinSize = new System.Drawing.Size(96, 26);
             this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(84, 26);
+            this.layoutControlItem9.Size = new System.Drawing.Size(96, 26);
             this.layoutControlItem9.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem9.TextVisible = false;
@@ -452,25 +462,25 @@ namespace CRUDDapperDevExpress
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.ageSpinEdit;
-            this.layoutControlItem5.Location = new System.Drawing.Point(280, 24);
+            this.layoutControlItem5.Location = new System.Drawing.Point(321, 24);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(437, 24);
+            this.layoutControlItem5.Size = new System.Drawing.Size(501, 24);
             this.layoutControlItem5.Text = "Age:";
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(61, 14);
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(68, 14);
             // 
-            // Form1
+            // GridButtonForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(737, 524);
+            this.ClientSize = new System.Drawing.Size(842, 524);
             this.Controls.Add(this.layoutControl1);
-            this.Name = "Form1";
+            this.Name = "GridButtonForm";
             this.Text = "CRUD Dapper with DevExpress";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deleteButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.addressTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emailTextEdit.Properties)).EndInit();
@@ -512,7 +522,7 @@ namespace CRUDDapperDevExpress
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private DevExpress.XtraGrid.GridControl gridControl;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
         private DevExpress.XtraEditors.GridLookUpEdit genderComboBoxEdit;

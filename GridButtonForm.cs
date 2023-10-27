@@ -14,9 +14,10 @@ using System.Windows.Forms;
 
 namespace CRUDDapperDevExpress
 {
-    public partial class Form1 : DevExpress.XtraEditors.XtraForm
+    public partial class GridButtonForm : DevExpress.XtraEditors.XtraForm
     {
-        public Form1()
+        private readonly StudentRepository _studentRepository = new StudentRepository();
+        public GridButtonForm()
         {
             InitializeComponent();
         }
@@ -33,9 +34,7 @@ namespace CRUDDapperDevExpress
 
         void LoadDataToGridView()
         {
-            var studentRepositry = new StudentRepository();
-
-            gridControl.DataSource = studentRepositry.GetAll();            
+            gridControl.DataSource = _studentRepository.GetAll();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -49,17 +48,15 @@ namespace CRUDDapperDevExpress
                 //Query()의 결과가 이미 List 개체이므로 ToList()는 불필요하게 복사본을 만든다. AsList()는 단순히 List 객체를 List로 캐스팅한다.
                 genderComboBoxEdit.Properties.DataSource = gender;
                 genderComboBoxEdit.Properties.ValueMember = "ID";
-                genderComboBoxEdit.Properties.DisplayMember = "Name"; 
+                genderComboBoxEdit.Properties.DisplayMember = "Name";                
                 //Query<Gender>일 경우 Gender.Name의 Name으로 대소문자 구분하며, Query("select ID, Name)일 경우의 대소문자 구분 안함
-                
+
                 LoadDataToGridView();                
             }
         }
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            var studentRepository = new StudentRepository();
-
             //var studentID = studentIDTextEdit.Text;
             var fullName = fullNameTextEdit.Text;
             var gender = genderComboBoxEdit.EditValue.ToString() == "1";
@@ -75,7 +72,7 @@ namespace CRUDDapperDevExpress
             //}
 
             // check id is exists
-            //var isExists = studentRepository.IsExists(Convert.ToInt32(studentID));
+            //var isExists = _studentRepository.IsExists(Convert.ToInt32(studentID));
             //if (isExists)
             //{
             //    XtraMessageBox.Show($"StudentId {studentID} is existed!", "Information");
@@ -113,7 +110,7 @@ namespace CRUDDapperDevExpress
             };
 
 
-            var result = studentRepository.Insert(student);
+            var result = _studentRepository.Insert(student);
             if (result)
             {
                 ClearInput();
@@ -126,8 +123,6 @@ namespace CRUDDapperDevExpress
         }
         private void editButton_Click(object sender, EventArgs e)
         {
-            var studentRepository = new StudentRepository();
-
             var studentID = studentIDTextEdit.Text;
             var fullName = fullNameTextEdit.Text;
             var gender = genderComboBoxEdit.EditValue.ToString() != "1";
@@ -163,7 +158,7 @@ namespace CRUDDapperDevExpress
                 Address = address
             };
 
-            var result = studentRepository.Update(student);
+            var result = _studentRepository.Update(student);
             if (result)
             {
                 ClearInput();
@@ -175,7 +170,7 @@ namespace CRUDDapperDevExpress
             }
         }
 
-        private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        private void gridView_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             var gridView = sender as GridView;
             if (gridView.IsDataRow(e.FocusedRowHandle))
@@ -190,17 +185,16 @@ namespace CRUDDapperDevExpress
             }
         }
 
-        private void gridView1_RowCellClick(object sender, RowCellClickEventArgs e)
+        private void gridView_RowCellClick(object sender, RowCellClickEventArgs e)
         {
             if (e.Column == colDelete)
             {
-                var student = gridView1.GetFocusedRow() as Student;
-                var dialogResult = XtraMessageBox.Show($"Are you sure Delete Student {student.FullName}?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                var student = gridView.GetFocusedRow() as Student;
+                var dialogResult = XtraMessageBox.Show($"Are you sure Delete Student {student.FullName}?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    var studentRepository = new StudentRepository();
-                    studentRepository.Delete(student.StudentID);
-                    gridView1.DeleteSelectedRows();
+                    _studentRepository.Delete(student.StudentID);
+                    gridView.DeleteSelectedRows();
                 }
             }
         }

@@ -14,5 +14,6 @@ namespace CRUDDapperDevExpress.Models
         public int Age { get; set; }
         public string Email { get; set; }
         public string Address { get; set; }
+        public bool Edited { get; set; }
     }
 }
