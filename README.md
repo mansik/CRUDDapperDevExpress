@@ -5,10 +5,10 @@
 ## 설명: CRUD Dapper with DevExpress(테이블 클래스, DB연동 클래스, DB Connection 분리)
 
 ## 환경
-* Visual Studio: [x] 2019, [ ] 2022
+* Visual Studio: [ ] 2019, [x] 2022
 * 프로젝트 생성: [x] .Net Framework, [ ] .Net WinForm(windows form)
 * Package 
-  * [x] DevExpress 18.2
+  * [x] DevExpress 23.1
 * NuGet
   * [x] System.Data.SqlClient 
   * [x] Dapper

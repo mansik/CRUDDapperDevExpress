@@ -70,7 +70,7 @@ namespace CRUDDapperDevExpress
                     var searched = (studentBindingSource.DataSource as List<Student>).Where(x => x.FullName == e.Value.ToString());
                     if (searched.Count() > 1)
                     {
-                        XtraMessageBox.Show($"{e.Value.ToString()}은 이미 등록되어 있습니다.", "확인", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        XtraMessageBox.Show($"{e.Value}은 이미 등록되어 있습니다.", "확인", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         gridView.SetRowCellValue(e.RowHandle, e.Column.FieldName, gridView.ActiveEditor.OldEditValue);
                     }
                 }
@@ -148,8 +148,7 @@ namespace CRUDDapperDevExpress
 
             for (int rowIndex = 0; rowIndex < gridView.DataRowCount; rowIndex++)
             {
-                var row = gridView.GetRow(rowIndex) as Student;
-                if (row != null)
+                if (gridView.GetRow(rowIndex) is Student row)
                     listBoxControl.Items.Add($"rowIndex: {rowIndex}, Id: {row.StudentID}");
             }
         }
@@ -182,8 +181,10 @@ namespace CRUDDapperDevExpress
             string middleColumn = "User: [User Name]";
             string rightColumn = "Date: [Date Printed]";
 
-            var printLink = new PrintableComponentLink(new PrintingSystem());
-            printLink.Component = gridView.GridControl;
+            var printLink = new PrintableComponentLink(new PrintingSystem())
+            {
+                Component = gridView.GridControl
+            };
             var headerFooter = printLink.PageHeaderFooter as PageHeaderFooter;
 
             headerFooter.Header.Content.Clear();
@@ -196,7 +197,7 @@ namespace CRUDDapperDevExpress
             printLink.Margins.Left = 35;
             printLink.Margins.Right = 35;
             printLink.Landscape = false;
-            printLink.PaperKind = System.Drawing.Printing.PaperKind.A4;
+            printLink.PaperKind = DevExpress.Drawing.Printing.DXPaperKind.A4;
 
             printLink.ShowPreview();
         }
