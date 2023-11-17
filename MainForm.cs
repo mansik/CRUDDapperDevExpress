@@ -1,14 +1,6 @@
 ﻿using DevExpress.XtraEditors;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace CRUDDapperDevExpress
 {
@@ -30,7 +22,7 @@ namespace CRUDDapperDevExpress
         }
 
         private void listBoxControl1_SelectedIndexChanged(object sender, EventArgs e)
-        {            
+        {
             string formName = (sender as ListBoxControl).SelectedItem.ToString();
             CreateFormByName(formName).Show();
         }
