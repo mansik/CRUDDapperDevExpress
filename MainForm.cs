@@ -16,9 +16,7 @@ namespace CRUDDapperDevExpress
             var namespacePrefix = "CRUDDapperDevExpress.";
             Assembly myAssembly = Assembly.GetExecutingAssembly();
             Type formType = myAssembly.GetType(namespacePrefix + formName);
-            if (formType == null)
-                throw new ArgumentException("Form type not found");
-            return (XtraForm)Activator.CreateInstance(formType);
+            return formType == null ? throw new ArgumentException("Form type not found") : (XtraForm)Activator.CreateInstance(formType);
         }
 
         private void listBoxControl1_SelectedIndexChanged(object sender, EventArgs e)
