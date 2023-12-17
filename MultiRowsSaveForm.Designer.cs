@@ -56,6 +56,7 @@ namespace CRUDDapperDevExpress
             this.stateButton = new DevExpress.XtraEditors.SimpleButton();
             this.setRowCellValueButton = new DevExpress.XtraEditors.SimpleButton();
             this.exportButton = new DevExpress.XtraEditors.SimpleButton();
+            this.exportDropDownButton = new DevExpress.XtraEditors.DropDownButton();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -66,6 +67,16 @@ namespace CRUDDapperDevExpress
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.exportPopupMenu = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.exporttoXLSBarButtonItem = new DevExpress.XtraBars.BarButtonItem();
+            this.exporttoXLSXBarButtonItem = new DevExpress.XtraBars.BarButtonItem();
+            this.exporttoPDFBarButtonItem = new DevExpress.XtraBars.BarButtonItem();
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listBoxControl)).BeginInit();
@@ -83,6 +94,9 @@ namespace CRUDDapperDevExpress
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.exportPopupMenu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -95,6 +109,7 @@ namespace CRUDDapperDevExpress
             this.layoutControl1.Controls.Add(this.stateButton);
             this.layoutControl1.Controls.Add(this.setRowCellValueButton);
             this.layoutControl1.Controls.Add(this.exportButton);
+            this.layoutControl1.Controls.Add(this.exportDropDownButton);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
@@ -296,11 +311,21 @@ namespace CRUDDapperDevExpress
             // 
             this.exportButton.Location = new System.Drawing.Point(328, 12);
             this.exportButton.Name = "exportButton";
-            this.exportButton.Size = new System.Drawing.Size(100, 22);
+            this.exportButton.Size = new System.Drawing.Size(91, 22);
             this.exportButton.StyleController = this.layoutControl1;
             this.exportButton.TabIndex = 13;
             this.exportButton.Text = "내보내기";
             this.exportButton.Click += new System.EventHandler(this.exportButton_Click);
+            // 
+            // exportDropDownButton
+            // 
+            this.exportDropDownButton.DropDownControl = this.exportPopupMenu;
+            this.exportDropDownButton.Location = new System.Drawing.Point(423, 12);
+            this.exportDropDownButton.Name = "exportDropDownButton";
+            this.exportDropDownButton.Size = new System.Drawing.Size(95, 22);
+            this.exportDropDownButton.StyleController = this.layoutControl1;
+            this.exportDropDownButton.TabIndex = 14;
+            this.exportDropDownButton.Text = "내보내기";
             // 
             // layoutControlGroup1
             // 
@@ -315,7 +340,8 @@ namespace CRUDDapperDevExpress
             this.layoutControlItem4,
             this.layoutControlItem1,
             this.layoutControlItem3,
-            this.layoutControlItem8});
+            this.layoutControlItem8,
+            this.layoutControlItem9});
             this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.Size = new System.Drawing.Size(977, 628);
             this.layoutControlGroup1.TextVisible = false;
@@ -341,9 +367,9 @@ namespace CRUDDapperDevExpress
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(420, 0);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(510, 0);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(279, 26);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(189, 26);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem6
@@ -396,9 +422,93 @@ namespace CRUDDapperDevExpress
             this.layoutControlItem8.Control = this.exportButton;
             this.layoutControlItem8.Location = new System.Drawing.Point(316, 0);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(104, 26);
+            this.layoutControlItem8.Size = new System.Drawing.Size(95, 26);
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
+            // 
+            // layoutControlItem9
+            // 
+            this.layoutControlItem9.Control = this.exportDropDownButton;
+            this.layoutControlItem9.Location = new System.Drawing.Point(411, 0);
+            this.layoutControlItem9.Name = "layoutControlItem9";
+            this.layoutControlItem9.Size = new System.Drawing.Size(99, 26);
+            this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem9.TextVisible = false;
+            // 
+            // exportPopupMenu
+            // 
+            this.exportPopupMenu.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.exporttoXLSBarButtonItem),
+            new DevExpress.XtraBars.LinkPersistInfo(this.exporttoXLSXBarButtonItem),
+            new DevExpress.XtraBars.LinkPersistInfo(this.exporttoPDFBarButtonItem)});
+            this.exportPopupMenu.Manager = this.barManager1;
+            this.exportPopupMenu.Name = "exportPopupMenu";
+            // 
+            // exporttoXLSBarButtonItem
+            // 
+            this.exporttoXLSBarButtonItem.Caption = "Export To XLS";
+            this.exporttoXLSBarButtonItem.Id = 0;
+            this.exporttoXLSBarButtonItem.Name = "exporttoXLSBarButtonItem";
+            this.exporttoXLSBarButtonItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.exporttoXLSBarButtonItem_ItemClick);
+            // 
+            // exporttoXLSXBarButtonItem
+            // 
+            this.exporttoXLSXBarButtonItem.Caption = "Export To XLSX";
+            this.exporttoXLSXBarButtonItem.Id = 1;
+            this.exporttoXLSXBarButtonItem.Name = "exporttoXLSXBarButtonItem";
+            this.exporttoXLSXBarButtonItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.exporttoXLSXBarButtonItem_ItemClick);
+            // 
+            // exporttoPDFBarButtonItem
+            // 
+            this.exporttoPDFBarButtonItem.Caption = "Export To Pdf";
+            this.exporttoPDFBarButtonItem.Id = 2;
+            this.exporttoPDFBarButtonItem.Name = "exporttoPDFBarButtonItem";
+            this.exporttoPDFBarButtonItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.exporttoPDFBarButtonItem_ItemClick);
+            // 
+            // barManager1
+            // 
+            this.barManager1.DockControls.Add(this.barDockControlTop);
+            this.barManager1.DockControls.Add(this.barDockControlBottom);
+            this.barManager1.DockControls.Add(this.barDockControlLeft);
+            this.barManager1.DockControls.Add(this.barDockControlRight);
+            this.barManager1.Form = this;
+            this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.exporttoXLSBarButtonItem,
+            this.exporttoXLSXBarButtonItem,
+            this.exporttoPDFBarButtonItem});
+            this.barManager1.MaxItemId = 3;
+            // 
+            // barDockControlTop
+            // 
+            this.barDockControlTop.CausesValidation = false;
+            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlTop.Manager = this.barManager1;
+            this.barDockControlTop.Size = new System.Drawing.Size(977, 0);
+            // 
+            // barDockControlBottom
+            // 
+            this.barDockControlBottom.CausesValidation = false;
+            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 628);
+            this.barDockControlBottom.Manager = this.barManager1;
+            this.barDockControlBottom.Size = new System.Drawing.Size(977, 0);
+            // 
+            // barDockControlLeft
+            // 
+            this.barDockControlLeft.CausesValidation = false;
+            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlLeft.Manager = this.barManager1;
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 628);
+            // 
+            // barDockControlRight
+            // 
+            this.barDockControlRight.CausesValidation = false;
+            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControlRight.Location = new System.Drawing.Point(977, 0);
+            this.barDockControlRight.Manager = this.barManager1;
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 628);
             // 
             // MultiRowsSaveForm
             // 
@@ -406,6 +516,10 @@ namespace CRUDDapperDevExpress
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(977, 628);
             this.Controls.Add(this.layoutControl1);
+            this.Controls.Add(this.barDockControlLeft);
+            this.Controls.Add(this.barDockControlRight);
+            this.Controls.Add(this.barDockControlBottom);
+            this.Controls.Add(this.barDockControlTop);
             this.Name = "MultiRowsSaveForm";
             this.Text = "XtraForm1";
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
@@ -425,7 +539,11 @@ namespace CRUDDapperDevExpress
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.exportPopupMenu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -461,5 +579,16 @@ namespace CRUDDapperDevExpress
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraEditors.SimpleButton exportButton;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
+        private DevExpress.XtraEditors.DropDownButton exportDropDownButton;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
+        private DevExpress.XtraBars.PopupMenu exportPopupMenu;
+        private DevExpress.XtraBars.BarButtonItem exporttoXLSBarButtonItem;
+        private DevExpress.XtraBars.BarButtonItem exporttoXLSXBarButtonItem;
+        private DevExpress.XtraBars.BarButtonItem exporttoPDFBarButtonItem;
+        private DevExpress.XtraBars.BarManager barManager1;
+        private DevExpress.XtraBars.BarDockControl barDockControlTop;
+        private DevExpress.XtraBars.BarDockControl barDockControlBottom;
+        private DevExpress.XtraBars.BarDockControl barDockControlLeft;
+        private DevExpress.XtraBars.BarDockControl barDockControlRight;
     }
 }

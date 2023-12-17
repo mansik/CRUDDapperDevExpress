@@ -1,4 +1,6 @@
 ﻿using CRUDDapperDevExpress.Models;
+using DevExpress.Data.Utils;
+using DevExpress.Export;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraPrinting;
@@ -201,5 +203,102 @@ namespace CRUDDapperDevExpress
 
             printLink.ShowPreview();
         }
+
+
+        #region Export
+        private string GetFileName(string extension, string filter)
+        {
+            using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+            {
+                saveFileDialog.Filter = filter;
+                saveFileDialog.FileName = "Document";
+                saveFileDialog.DefaultExt = extension;
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    return saveFileDialog.FileName;
+                }
+            }
+
+            return string.Empty;
+        }
+
+        private void OpenExportedFile(string fileName)
+        {
+            if (XtraMessageBox.Show("Do you want to Open this file?", "Export", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                SafeProcess.Start(fileName);
+            }
+        }
+
+        private void ExportToCore(String filename, string ext)
+        {
+            if (ext == "rtf") gridView.ExportToRtf(filename);
+            if (ext == "docx") gridView.ExportToDocx(filename);
+            if (ext == "pdf") gridView.ExportToPdf(filename);
+            if (ext == "mht") gridView.ExportToMht(filename);
+            if (ext == "html") gridView.ExportToHtml(filename);
+            if (ext == "txt") gridView.ExportToText(filename);
+            if (ext == "xls") ExportToXlsInternal(filename);
+            if (ext == "xlsx") ExportToXlsxInternal(filename);
+        }
+        private void ExportToXlsxInternal(string filename)
+        {
+            var options = new XlsxExportOptionsEx
+            {
+                UnboundExpressionExportMode = UnboundExpressionExportMode.AsFormula
+            };
+            gridView.ExportToXlsx(filename, options);
+        }
+        private void ExportToXlsInternal(string filename)
+        {
+            var options = new XlsExportOptionsEx
+            {
+                UnboundExpressionExportMode = UnboundExpressionExportMode.AsFormula
+            };
+            gridView.ExportToXls(filename, options);
+        }
+
+        private void ExportTo(string ext, string filter)
+        {
+            string fileName = GetFileName($"*.{ext}", filter);
+            if (!string.IsNullOrEmpty(fileName))
+            {
+                try
+                {
+                    ExportToCore(fileName, ext);
+                    OpenExportedFile(fileName);
+                }
+                catch (Exception ex)
+                {
+                    XtraMessageBox.Show(ex.Message, "Error");
+                }
+            }
+        }
+        #endregion
+
+        private void exporttoPDFBarButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var ext = "pdf";
+            var filter = "XLSX document (*.pdf)|*.pdf";
+
+            ExportTo(ext, filter);
+        }
+
+        private void exporttoXLSBarButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var ext = "xls";
+            var filter = "XLS document (*.xls)|*.xls";
+
+            ExportTo(ext, filter);
+        }
+
+        private void exporttoXLSXBarButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var ext = "xlsx";
+            var filter = "XLSX document (*.xlsx)|*.xlsx";
+
+            ExportTo(ext, filter);
+        }
+
     }
 }
