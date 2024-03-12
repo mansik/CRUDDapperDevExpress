@@ -3,13 +3,7 @@ using Dapper;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace CRUDDapperDevExpress
@@ -48,10 +42,10 @@ namespace CRUDDapperDevExpress
                 //Query()의 결과가 이미 List 개체이므로 ToList()는 불필요하게 복사본을 만든다. AsList()는 단순히 List 객체를 List로 캐스팅한다.
                 genderComboBoxEdit.Properties.DataSource = gender;
                 genderComboBoxEdit.Properties.ValueMember = "ID";
-                genderComboBoxEdit.Properties.DisplayMember = "Name";                
+                genderComboBoxEdit.Properties.DisplayMember = "Name";
                 //Query<Gender>일 경우 Gender.Name의 Name으로 대소문자 구분하며, Query("select ID, Name)일 경우의 대소문자 구분 안함
 
-                LoadDataToGridView();                
+                LoadDataToGridView();
             }
         }
 

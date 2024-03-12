@@ -1,13 +1,7 @@
-﻿using DevExpress.Utils;
-using DevExpress.XtraEditors;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CRUDDapperDevExpress.Models
@@ -17,7 +11,7 @@ namespace CRUDDapperDevExpress.Models
         public static string ConnectionString => ConfigurationManager.ConnectionStrings["cn"].ConnectionString;
         public static IDbConnection GetConnection()
         {
-            return new SqlConnection(ConnectionString);            
+            return new SqlConnection(ConnectionString);
         }
 
         public static IDbConnection GetADOConnection()

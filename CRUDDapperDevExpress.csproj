@@ -49,23 +49,23 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\Dapper.2.1.24\lib\net461\Dapper.dll</HintPath>
+      <HintPath>packages\Dapper.2.1.35\lib\net461\Dapper.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.BonusSkins.v23.1" />
-    <Reference Include="DevExpress.Drawing.v23.1" />
-    <Reference Include="DevExpress.Data.v23.1" />
-    <Reference Include="DevExpress.Data.Desktop.v23.1" />
-    <Reference Include="DevExpress.Images.v23.1, Version=23.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Tutorials.v23.1, Version=23.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Utils.v23.1" />
-    <Reference Include="DevExpress.Sparkline.v23.1.Core" />
-    <Reference Include="DevExpress.XtraBars.v23.1, Version=23.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraEditors.v23.1" />
-    <Reference Include="DevExpress.Printing.v23.1.Core" />
-    <Reference Include="DevExpress.XtraGrid.v23.1, Version=23.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraLayout.v23.1, Version=23.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraNavBar.v23.1, Version=23.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraPrinting.v23.1, Version=23.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.BonusSkins.v23.2" />
+    <Reference Include="DevExpress.Drawing.v23.2" />
+    <Reference Include="DevExpress.Data.v23.2" />
+    <Reference Include="DevExpress.Data.Desktop.v23.2" />
+    <Reference Include="DevExpress.Images.v23.2, Version=23.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Tutorials.v23.2, Version=23.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v23.2" />
+    <Reference Include="DevExpress.Sparkline.v23.2.Core" />
+    <Reference Include="DevExpress.XtraBars.v23.2, Version=23.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v23.2" />
+    <Reference Include="DevExpress.Printing.v23.2.Core" />
+    <Reference Include="DevExpress.XtraGrid.v23.2, Version=23.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v23.2, Version=23.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraNavBar.v23.2, Version=23.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v23.2, Version=23.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
